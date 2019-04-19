@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/dhkatz/cfl-converter#readme",
   "devDependencies": {
+    "@types/download": "^6.2.4",
     "@types/jszip": "^3.1.5",
     "@types/node": "^11.13.5",
     "del": "^4.1.0",
