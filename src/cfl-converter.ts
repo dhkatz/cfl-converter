@@ -24,13 +24,21 @@ async function main() {
   program
   .version('0.0.1')
   .option('-I, --input <files>', '.CFL file(s) to convert.', (value: string): string[] => value.split(','))
-  .option('-P, --products <ids>', 'List of Product IDs to retrieve and convert.', (value: string) => value.split(','))
-  .parse(process.argv);
+  .option('-P, --products <ids>', 'List of Product IDs to retrieve and convert.', (value: string) => value.split(','));
+
+  program.on('--help', () => {
+    console.log('');
+    console.log('Examples:');
+    console.log('  $ cfl-converter --input product.cfl,chair.cfl');
+    console.log('  $ cfl-converter --products 1243456,654321')
+  });
+
+  program.parse(process.argv);
 
   const products: Buffer[] = (await Promise.all((program.products || []).map(async (product: string): Promise<Buffer | null> =>  {
     for (let i = 100; i > 0; i--) {
       try {
-        const file = await download(`http://userimages-akm.imvu.com/productdata/${product}/${i}`);
+        const file = await download(`http://userimages-akm.imvu.com/productdata/${product.trim()}/${i}`);
 
         return Buffer.from(file);
       } catch {
@@ -54,7 +62,7 @@ async function main() {
 
     console.log(chalk.blueBright(`Processing '${typeof input === 'string' ? input : 'download'}'. . .`));
 
-    const reader = new BinaryReader(typeof input === 'string' ? fs.readFileSync(input) : input);
+    const reader = new BinaryReader(typeof input === 'string' ? fs.readFileSync(input.trim()) : input);
 
     // CFL Header
     // This information is exclusive to the CFL format

@@ -22,6 +22,10 @@ Options:
   -I, --input <files>   .CFL file(s) to convert.
   -P, --products <ids>  List of Product IDs to retrieve and convert.
   -h, --help            output usage information
+
+Examples:
+  $ cfl-converter --input product.cfl,chair.cfl
+  $ cfl-converter --products 1243456,654321
 ```
 
 ## Testing
