@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+- '10'
+before_install:
+- npm install -D
+script:
+- npm run build
+deploy:
+  provider: releases
+  api_key:
+    secure: p0rhW8z4kROBXN7SzuAZkFNj2gXmRDSxsots62c2oC6uboFSh/zuknDbHh2jJFP3B8FVPODKCpbbv6/KoDwG4snrJZBHXozFf4wQ9sKMyR2wHBW8TJNPtvRzrDew33NtqyXJPiXtirZIO+JUNe0xKDk3Sy/5bWkESwiGArgBxxcDazYLR6TdcDUeLgqBDH29+dA3o/g4LLE9DXJjmBzSjQO31FDOBXKIBYA3OkYlI6ixkB6GbnfmtcEF5UhjRm0ltM1NPhCt3qBqJswWYD7I3air3XGyQFC2ma3nzpg4B9i0V1gX3PAKDa+ThYxKR3djzF3+Z90NI0R67TEVOZO4kJUV9/vS2iSS0APXqcP6NevCQ/qjYFu7aeE3cb2eV4mKy2lElSVso2xz3vXCvr7fEYLK838IU2uV72CKUDbgGEbCYVVd2kq07GVjRXNWOHp11pwi7O5Szy0N8BaTKPIDEJC4mMCB1gkr0dmuB3u84i5oVWsn7TbM71aDtvJPO2WOgsConslsSqkH/5WEw6ZLnDjmnd75FWF0Fd6RxaghcqfHbsK2p0kPJ7NmZAs84ISl4eQqiZ9AJcVpDAFlGi6j8Tlihg2knZi2oMcPZzLv2zF2ipOs3iu7mHwaPh2Cr6g2SdDRMQ9Gc1JwwI6u9Mrrv4pUGnBEDxNm0xGgbAfmgmk=
+  file: 
+    - bin/cfl-converter-linux
+    - bin/cfl-converter-macos
+    - bin/cfl-converter-win.exe
+  on:
+    repo: dhkatz/cfl-converter
