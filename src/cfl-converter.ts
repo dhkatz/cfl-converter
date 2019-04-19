@@ -27,7 +27,7 @@ async function main() {
   .option('-P, --products <ids>', 'List of Product IDs to retrieve and convert.', (value: string) => value.split(','))
   .parse(process.argv);
 
-  const products: Buffer[] = (await Promise.all((program.products || []).map(async (product: string): Promise<Buffer | null> =>  { 
+  const products: Buffer[] = (await Promise.all((program.products || []).map(async (product: string): Promise<Buffer | null> =>  {
     for (let i = 100; i > 0; i--) {
       try {
         const file = await download(`http://userimages-akm.imvu.com/productdata/${product}/${i}`);
@@ -65,13 +65,13 @@ async function main() {
 
     const format = reader.readInt();
 
-    console.log(chalk.greenBright(`\tDecoded CFL header.`));
+    console.log(chalk.greenBright('\tDecoded CFL header.'));
 
     // Decompress the LZMA section of the CFL file
     const content = Uint8Array.from([...Array(reader.readInt())].map(() => reader.readByte()));
     const data = new BinaryReader(format === 4 ? decompress(content) : content);
 
-    console.log(chalk.greenBright(`\tDecompressed CFL content.`));
+    console.log(chalk.greenBright('\tDecompressed CFL content.'));
 
     // Parse the CFL entries
     const entries: CFLEntry[] = [];
@@ -107,7 +107,7 @@ async function main() {
       position += length;
     }
 
-    console.log(chalk.greenBright(`\tParsed ${entries.length} CFL ${entries.length !== 1 ? 'entries': 'entry'}.`));
+    console.log(chalk.greenBright(`\tParsed ${entries.length} CFL ${entries.length !== 1 ? 'entries' : 'entry'}.`));
 
     count++;
 
@@ -122,7 +122,7 @@ async function main() {
       .on('close', () => console.log(chalk.greenBright(`\tWrote to ${typeof input === 'string' ? input.slice(0, -4) : count}.chkn.\n`)));
   }
 
-  console.log(`Finished processing ${inputs.length} file${inputs.length > 1 ? 's' : ''}!`)
+  console.log(`Finished processing ${inputs.length} file${inputs.length > 1 ? 's' : ''}!`);
 }
 
 function decompress(data: Uint8Array | Buffer): Uint8Array {
