@@ -1,0 +1,48 @@
+{
+  "name": "cfl-converter",
+  "version": "0.0.1",
+  "description": "Convert IMVU's CFL format to CHKN (zip)",
+  "main": "build/cfl-converter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "./node_modules/.bin/gulp build",
+    "build": "npm run compile && ./node_modules/.bin/pkg build/cfl-converter.js --out-path ./bin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhkatz/cfl-converter.git"
+  },
+  "keywords": [
+    "imvu",
+    "cfl",
+    "chkn",
+    "converter"
+  ],
+  "author": "David Katz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dhkatz/cfl-converter/issues"
+  },
+  "homepage": "https://github.com/dhkatz/cfl-converter#readme",
+  "devDependencies": {
+    "@types/jszip": "^3.1.5",
+    "@types/node": "^11.13.5",
+    "del": "^4.1.0",
+    "gulp": "^4.0.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-tslint": "^8.1.4",
+    "gulp-typescript": "^5.0.1",
+    "merge2": "^1.2.3",
+    "pkg": "^4.3.7",
+    "ts-node": "^8.1.0",
+    "tslint": "^5.16.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "typescript": "^3.4.4"
+  },
+  "dependencies": {
+    "commander": "^2.20.0",
+    "csharp-binary-stream": "^1.0.0",
+    "jszip": "^3.2.1",
+    "lzma-purejs": "github:elderapo/lzma-purejs"
+  }
+}
