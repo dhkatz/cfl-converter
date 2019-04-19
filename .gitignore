@@ -228,4 +228,5 @@ $RECYCLE.BIN/
 
 build/
 *.cfl
+*.chkn
 

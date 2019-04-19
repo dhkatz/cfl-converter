@@ -14,7 +14,7 @@ Convert .cfl files to .chkn files using this easy command-line tool!
 
 Product IDs can also be supplied and the program will attempt to download them and convert them.
 
-`
+```
 Usage: cfl-converter [options]
 
 Options:
@@ -22,7 +22,7 @@ Options:
   -I, --input <files>   .CFL file(s) to convert.
   -P, --products <ids>  List of Product IDs to retrieve and convert.
   -h, --help            output usage information
-`
+```
 
 ## Testing
 
