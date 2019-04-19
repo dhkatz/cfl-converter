@@ -30,7 +30,7 @@ async function main() {
     console.log('');
     console.log('Examples:');
     console.log('  $ cfl-converter --input product.cfl,chair.cfl');
-    console.log('  $ cfl-converter --products 1243456,654321')
+    console.log('  $ cfl-converter --products 1243456,654321');
   });
 
   program.parse(process.argv);
