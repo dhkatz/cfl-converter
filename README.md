@@ -8,6 +8,8 @@ This tool allows you to convert a .cfl to a file usable by the client create mod
 
 In reality, a .chkn file is just a zip archive and can be opened as such.
 
+Inspired by https://github.com/Toyz/LibCFL
+
 ## Usage
 
 Convert .cfl files to .chkn files using this easy command-line tool!
