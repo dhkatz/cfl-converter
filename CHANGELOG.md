@@ -7,3 +7,5 @@ This file uses change log convention from [Keep a CHANGELOG].
 
 [Keep a CHANGELOG]: http://keepachangelog.com
 [Semantic Versioning]: http://semver.org/
+
+[unreleased]: https://github.com/dhkatz/cfl-converter/compare/0.1.0...HEAD
