@@ -15,4 +15,4 @@ deploy:
     - bin/cfl-converter-macos
     - bin/cfl-converter-win.exe
   on:
-    repo: dhkatz/cfl-converter
+    tags: true
