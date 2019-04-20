@@ -76,7 +76,7 @@ async function main() {
     console.log(chalk.greenBright('\tDecoded CFL header.'));
 
     // Decompress the LZMA section of the CFL file
-    const content = Uint8Array.from([...Array(reader.readInt())].map(() => reader.readByte()));
+    const content = Uint8Array.from(reader.readBytes(reader.readInt()));
     const data = new BinaryReader(format === 4 ? decompress(content) : content);
 
     console.log(chalk.greenBright('\tDecompressed CFL content.'));
@@ -95,7 +95,7 @@ async function main() {
       reader.position = offset;
 
       // Decompress the LZMA section of the entry
-      const entry = Uint8Array.from([...Array(reader.readUnsignedInt())].map(() => reader.readByte()));
+      const entry = Uint8Array.from(reader.readBytes(reader.readUnsignedInt()));
       const contents = compression === 4 ? decompress(entry) : entry;
 
       // Calculate hash and entry size
@@ -138,7 +138,7 @@ function decompress(data: Uint8Array | Buffer): Uint8Array {
   const writer = new BinaryWriter();
   // Read the first 5 bytes, they are the properties
   // Set size to -1 to just read to EOS
-  lzma.decompress([...Array(5)].map(() => reader.readByte()), reader, writer, -1);
+  lzma.decompress(reader.readBytes(5), reader, writer, -1);
   return writer.toUint8Array();
 }
 
