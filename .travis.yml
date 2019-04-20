@@ -9,6 +9,7 @@ deploy:
   provider: releases
   api_key:
     secure: ngjuEx6GorBaCEy4fa+/ssdUnJxN/Iu3FHZCEGq+HIw9/UAUiNfRswUMA1ZLlib0c0mYIfJn5iJeS6v2sC4rq1vGgefID31rk4hunMEtFP7Ueklhs/QpxbFo6AFipbXbQuMEBlqNjuzQELduV1GLVGMX2qQ7s7DU38GH2UuIWf48ZZ5r7Zwhj98RAYvAL98V9ynzIzddY3lXAE+8OqHFv7hNy8ycm0v/8QlOi/h5FNLgPD6H8un+Z416nBhua54FP2rh1PQ5Ks4T+XwUIZ/cMvWwEzSrlKV8YEkIP0lim/hTQNG2Ip+y/N7cCImhonvDBNB9gFoipON35sAldo9DxS67nXqvsSuLMEwJgflNbmje0gIV3r7fWFU14MeS03qdwvq57sAc3yOf/OByWL5RotOWZ8ot/LiFCkrX/mlvjD68On5qaa3uYuuFjiwmwBSivhQte+hXSWHucPr0NCPM8ee+q/2ovWyd4WlHAVEyJSk090Zwi0UqK1MrCtEh6YT1meMjcikjRiXJidLUMm/WO8dEX7YDYQtN8aRplFPvnENByYlhPkb3Ax8/TAewhBRO8w9k6CnKJSYoo6PaM22V0cA6+DLNNfo0cEd1HRR8XPQnAtYobqm3yyqO2yEvULCGJvBfCCuZ3pHcJVlB7C00ULD9AgqJNiVOVp6as0B66Uo=
+  skip_cleanup: true
   file: 
     - bin/cfl-converter-linux
     - bin/cfl-converter-macos
