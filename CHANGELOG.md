@@ -5,6 +5,10 @@ This file uses change log convention from [Keep a CHANGELOG].
 
 ## [Unreleased]
 
+## 0.1.0 - 2019-04-20
+### Added
+- Added CHANGELOG.md
+
 [Keep a CHANGELOG]: http://keepachangelog.com
 [Semantic Versioning]: http://semver.org/
 
