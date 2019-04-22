@@ -9,7 +9,7 @@ import path from 'path';
 import { dest, series, src, watch } from 'gulp';
 import { CompileStream } from 'gulp-typescript';
 
-const project = typescript.createProject('tsconfig.json');
+const project = typescript.createProject('tsconfig.json', { declarationFiles: true });
 const linter = require('tslint').Linter.createProgram('tsconfig.json');
 const destination = 'build/';
 

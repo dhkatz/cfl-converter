@@ -6,8 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## 0.1.0 - 2019-04-20
+## 0.2.0 - 2019-04-22
+### Changed
+- Refactored much of the code to split into separate modules
+- Changed dependencies in converter program to be optional
+
+## 0.1.1 - 2019-04-20
+### Changed
+- Changed the program to suppor the new ReadBytes() method from csharp-binary-stream
+
+## [0.1.0] - 2019-04-20
 ### Added
 - Added CHANGELOG.md
 
-[Unreleased]: https://github.com/dhkatz/cfl-converter/compare/0.1.0...HEAD
+[Unreleased]: https://github.com/dhkatz/cfl-converter/compare/0.2.0...HEAD
+[0.1.1]: https://github.com/dhkatz/cfl-converter/compare/0.1.1...0.2.0
+[0.1.0]: https://github.com/dhkatz/cfl-converter/compare/0.1.0...0.1.1

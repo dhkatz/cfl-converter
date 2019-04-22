@@ -1,12 +1,14 @@
 {
   "name": "cfl-converter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Convert IMVU's CFL format to CHKN (zip)",
-  "main": "build/cfl-converter.js",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "./node_modules/.bin/gulp build",
-    "build": "npm run compile && ./node_modules/.bin/pkg build/cfl-converter.js --out-path ./bin"
+    "build": "npm run compile && ./node_modules/.bin/pkg build/cfl-converter.js --out-path ./bin",
+    "prepublishOnly": "npm run compile"
   },
   "repository": {
     "type": "git",
@@ -25,7 +27,6 @@
   },
   "homepage": "https://github.com/dhkatz/cfl-converter#readme",
   "devDependencies": {
-    "@types/download": "^6.2.4",
     "@types/jszip": "^3.1.5",
     "@types/node": "^11.13.6",
     "del": "^4.1.0",
@@ -41,11 +42,14 @@
     "typescript": "^3.4.4"
   },
   "dependencies": {
-    "chalk": "^2.4.2",
-    "commander": "^2.20.0",
     "csharp-binary-stream": "^1.0.1",
-    "download": "^7.1.0",
+    "get-stream": "^5.1.0",
     "jszip": "^3.2.1",
     "lzma-purejs": "github:elderapo/lzma-purejs"
+  },
+  "optionalDependencies": {
+    "@types/download": "^6.2.4",
+    "commander": "^2.20.0",
+    "download": "^7.1.0"
   }
 }

@@ -10,6 +10,17 @@ Inspired by https://github.com/Toyz/LibCFL
 
 ## Usage
 
+### Library
+
+This package can also be integrated into your own program.
+
+You can `import { convert } from 'cfl-converter';` and call the function with an `ArrayBufferLike` (such as a Buffer) containing the contents of
+a CFL file (and any supported options in the second parameter).
+
+A `decompress(data: ArrayBufferLike)` function is also provided if you would like to manually decompress the LZMA portions of the CFL.
+
+### Command Line Tool
+
 Convert .cfl files to .chkn files using this easy command-line tool!
 
 Product IDs can also be supplied and the program will attempt to download them and convert them.
