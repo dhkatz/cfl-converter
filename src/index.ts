@@ -31,7 +31,7 @@ export interface CFLOptions {
  * @param buffer An `ArrayBufferLike` structure created from a CFL file.
  * @param debug If debug information should be logged or not.
  */
-export async function convert(buffer: ArrayBufferLike, options?: CFLOptions): Promise<ArrayBufferLike> {
+export async function convert(buffer: ArrayBufferLike, options: CFLOptions = {}): Promise<ArrayBufferLike> {
   const reader = new BinaryReader(buffer);
 
   // CFL Header

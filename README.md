@@ -1,6 +1,6 @@
 # IMVU CFL Converter
 
-[![Build Status](https://travis-ci.com/dhkatz/cfl-converter.svg?branch=master)](https://travis-ci.com/dhkatz/cfl-converter)
+[![Build Status](https://travis-ci.com/dhkatz/cfl-converter.svg?branch=master)](https://travis-ci.com/dhkatz/cfl-converter) [![npm version](https://badge.fury.io/js/cfl-converter.svg)](https://badge.fury.io/js/cfl-converter)
 
 Convert from IMVU's CFL format to a file usable by the IMVU client create mode (.chkn).
 
