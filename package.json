@@ -1,6 +1,6 @@
 {
   "name": "cfl-converter",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Convert IMVU's CFL format to CHKN (zip)",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -9,6 +9,9 @@
     "compile": "./node_modules/.bin/gulp build",
     "build": "npm run compile && ./node_modules/.bin/pkg build/cfl-converter.js --out-path ./bin",
     "prepublishOnly": "npm run compile"
+  },
+  "bin": {
+    "cfl-converter": "./build/cfl-converter.js"
   },
   "repository": {
     "type": "git",
