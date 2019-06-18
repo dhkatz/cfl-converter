@@ -1,8 +1,8 @@
-# IMVU CFL Converter
+# CFL Converter
 
 [![Build Status](https://travis-ci.com/dhkatz/cfl-converter.svg?branch=master)](https://travis-ci.com/dhkatz/cfl-converter) [![npm version](https://badge.fury.io/js/cfl-converter.svg)](https://badge.fury.io/js/cfl-converter)
 
-Convert from IMVU's CFL format to a file usable by the IMVU client create mode (.chkn).
+Convert from IMVU's CFL format to a file usable by the client create mode (.chkn).
 
 In reality, a .chkn file is just a zip archive and can be opened as such.
 
@@ -45,7 +45,7 @@ Testing is currently being written, although the program itself is quite simple.
 
 ## Details
 
-The signifiance of this is, that due to what I can only call an exploit of IMVU's CDN, you can download the CFL for ANY product in the shop!
+The signifiance of this is, that due to what I can only call a CDN exploit, you can download the CFL for ANY product in the shop!
 
 This can be accomplished by running the product ID through the url `http://userimages-akm.imvu.com/productdata/{productID}/1` where `{productID}` is the ID of the product you with to retrieve. 
 
