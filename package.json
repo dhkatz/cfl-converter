@@ -52,7 +52,7 @@
   },
   "optionalDependencies": {
     "@types/download": "^6.2.4",
-    "commander": "^4.0.0",
+    "commander": "^5.0.0",
     "download": "^7.1.0"
   }
 }
