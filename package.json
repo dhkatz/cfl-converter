@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "csharp-binary-stream": "^1.0.1",
-    "get-stream": "^5.1.0",
+    "get-stream": "^6.0.0",
     "jszip": "^3.2.1",
     "lzma-purejs": "github:elderapo/lzma-purejs"
   },
