@@ -39,7 +39,7 @@
     "gulp-typescript": "^5.0.1",
     "merge2": "^1.2.3",
     "pkg": "^4.3.7",
-    "ts-node": "^8.1.0",
+    "ts-node": "^9.0.0",
     "tslint": "^5.16.0",
     "tslint-eslint-rules": "^5.4.0",
     "typescript": "^3.4.4"
