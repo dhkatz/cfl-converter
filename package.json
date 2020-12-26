@@ -34,7 +34,7 @@
     "@types/node": "^13.1.2",
     "del": "^6.0.0",
     "gulp": "^4.0.0",
-    "gulp-sourcemaps": "^2.6.5",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-tslint": "^8.1.4",
     "gulp-typescript": "^5.0.1",
     "merge2": "^1.2.3",
