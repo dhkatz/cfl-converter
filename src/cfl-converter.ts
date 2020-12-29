@@ -3,26 +3,18 @@ import fs from 'fs';
 
 import { convert } from '.';
 
+import program from "commander";
+import download from "download";
+
 async function main() {
-  let program;
-  let download;
-
-  try {
-    program = (await import('commander')).default;
-    download = (await import('download')).default;
-  } catch {
-    console.error('One or more optional dependencies is missing! Please install them first.');
-    process.exit(1);
-  }
-
   program
-  .version('0.0.1')
-  .option('-I, --input <files>', '.CFL file(s) to convert.', (value: string): string[] => value.split(','), [])
-  .option('-P, --products <ids>', 'List of Product IDs to retrieve and convert.', (value: string) => value.split(','), [])
-  .option('-Q, --quiet', 'Stop the program from logging progress.', Boolean, false)
-  .option('-D, --dry-run', 'Skip outputting to a file and just attempt to convert.', Boolean, false)
-  .option('--ignore-missing', 'Ignore IDs that point to non-existant products.', Boolean, false)
-  .option('--ignore-extension', 'Attempt to process all files regardless of extension.', Boolean, false);
+    .version('1.0.0')
+    .option('-I, --input <files>', '.CFL file(s) to convert.', (value: string): string[] => value.split(','), [])
+    .option('-P, --products <ids>', 'List of Product IDs to retrieve and convert.', (value: string) => value.split(','), [])
+    .option('-Q, --quiet', 'Stop the program from logging progress.', Boolean, false)
+    .option('-D, --dry-run', 'Skip outputting to a file and just attempt to convert.', Boolean, false)
+    .option('--ignore-missing', 'Ignore IDs that point to non-existent products.', Boolean, false)
+    .option('--ignore-extension', 'Attempt to process all files regardless of extension.', Boolean, false);
 
   program.on('--help', () => {
     console.log('');
@@ -33,14 +25,15 @@ async function main() {
 
   program.parse(process.argv);
 
-  async function downloadProduct(id: number | string): Promise<ArrayBufferLike | null> {
-    for (let i = 100; i > 0; i--) {
+  async function downloadProduct(id: number | string): Promise<Buffer | null> {
+    let i = 100;
+    for (; i > 0; i--) {
       try {
         const file = await download(`http://userimages-akm.imvu.com/productdata/${typeof id === 'number' ? id : id.trim()}/${i}`);
 
         return Buffer.from(file);
       } catch {
-        continue;
+
       }
     }
 

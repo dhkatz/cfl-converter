@@ -1,5 +1,4 @@
 import del from 'del';
-import tslint from 'gulp-tslint';
 
 import sourcemaps from 'gulp-sourcemaps';
 import typescript from 'gulp-typescript';
@@ -10,14 +9,7 @@ import { dest, series, src, watch } from 'gulp';
 import { CompileStream } from 'gulp-typescript';
 
 const project = typescript.createProject('tsconfig.json', { declarationFiles: true });
-const linter = require('tslint').Linter.createProgram('tsconfig.json');
 const destination = 'build/';
-
-function lint() {
-  return src(['src/**/*.ts'])
-    .pipe(tslint({ configuration: 'tslint.json', formatter: 'verbose', program: linter }))
-    .pipe(tslint.report());
-}
 
 function build() {
   del.sync([`${destination}**/*.*`]);
@@ -36,10 +28,9 @@ function build() {
 }
 
 function update() {
-  watch('src/**/*.ts', series(lint, build));
+  watch('src/**/*.ts', series(build));
 }
 
-exports.lint = lint;
-exports.build = series(lint, build);
-exports.watch = series(lint, build, update);
-exports.default = series(lint, build);
+exports.build = series(build);
+exports.watch = series(build, update);
+exports.default = series(build);

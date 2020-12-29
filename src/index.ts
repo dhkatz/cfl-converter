@@ -28,10 +28,10 @@ export interface CFLOptions {
 
 /**
  * Convert a CFL file buffer to a ZIP file buffer.
- * @param buffer An `ArrayBufferLike` structure created from a CFL file.
- * @param debug If debug information should be logged or not.
+ * @param buffer A `Buffer` structure created from a CFL file.
+ * @param options
  */
-export async function convert(buffer: ArrayBufferLike, options: CFLOptions = {}): Promise<ArrayBufferLike> {
+export async function convert(buffer: ArrayBufferLike, options: CFLOptions = {}): Promise<Buffer> {
   const reader = new BinaryReader(buffer);
 
   // CFL Header
