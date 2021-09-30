@@ -1,6 +1,6 @@
 {
-  "name": "cfl-converter",
-  "version": "2.0.1",
+  "name": "@dhkatz/cfl-converter",
+  "version": "2.0.2",
   "description": "Convert IMVU's CFL format to CHKN (zip)",
   "main": "build/index.js",
   "types": "typings/index.d.ts",
