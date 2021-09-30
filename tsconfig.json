@@ -1,15 +1,29 @@
 {
     "compilerOptions": {
+        /* Module/Target Options */
         "target": "es2018",
+        "lib": ["es2019", "es2020.string"],
         "module": "commonjs",
-        "esModuleInterop": true
+        "sourceMap": true,
+        "declaration": true,
+        "outDir": "./build",
+        "declarationDir": "./typings",
+        /* Strict Type-Checking Options */
+        "alwaysStrict": true,
+        "noImplicitAny": true,
+        /* Basic Options */
+        /* Extra Options */
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "rootDir": "./src",
+        "baseUrl": ".",
+        "skipLibCheck": true
     },
     "include": [
-        "src",
-        "gulpfile.ts"
+        "src"
     ],
     "exclude": [
-        "node_modules",
-        "build"
+        "build",
+        "node_modules"
     ]
 }
