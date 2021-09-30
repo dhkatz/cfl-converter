@@ -21,7 +21,7 @@ async function main() {
   const program = new Command()
 
   program
-    .version('2.0.1')
+    .version('2.0.2')
     .option(
       '-I, --input <files>',
       '.CFL file(s) to convert.',
